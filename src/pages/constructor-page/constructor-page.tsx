@@ -1,15 +1,15 @@
-import { useSelector } from '../../services/store';
+import store, { useSelector } from '../../services/store';
 
 import styles from './constructor-page.module.css';
 
-import { BurgerIngredients } from '../../components';
-import { BurgerConstructor } from '../../components';
+import { BurgerIngredients } from '../../components/burger-ingredients';
+import { BurgerConstructor } from '../../components/burger-constructor';
 import { Preloader } from '../../components/ui';
 import { FC } from 'react';
 
 export const ConstructorPage: FC = () => {
   const isIngredientsLoading = useSelector(
-    (state) => state.ingredients.isLoading
+    (store) => store.ingredients.loading
   );
 
   return (
