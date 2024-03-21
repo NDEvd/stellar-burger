@@ -18,7 +18,7 @@ import { deleteCookie, getCookie } from '../../utils/cookie';
 
 export const fetchIngredients = createAsyncThunk(
   'ingredients/fetchAll',
-  async () => getIngredientsApi()
+  getIngredientsApi
 );
 
 export const checkUser = createAsyncThunk(
@@ -68,9 +68,9 @@ export const updateUser = createAsyncThunk(
   }
 );
 
-export const getFeeds = createAsyncThunk('order/getFeeds', async () =>
-  getFeedsApi()
-);
+export const getFeeds = createAsyncThunk('order/getFeeds', getFeedsApi);
+
+export const getOrders = createAsyncThunk('order/getOrders', getOrdersApi);
 
 export const orderBurger = createAsyncThunk(
   'order/orderBurger',
@@ -78,8 +78,4 @@ export const orderBurger = createAsyncThunk(
     const data = await orderBurgerApi(ingredients);
     return data.order;
   }
-);
-
-export const getOrders = createAsyncThunk('order/getOrders', async () =>
-  getOrdersApi()
 );

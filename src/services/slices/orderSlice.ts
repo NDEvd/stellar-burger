@@ -7,7 +7,7 @@ interface OrderState {
   feed: TOrdersData;
   userOrders: TOrder[];
   error: string | undefined | null;
-  newOrder: TOrder | null;
+  // newOrder: TOrder | null;
   orderRequest: boolean;
   orderModalData: TOrder | null;
 }
@@ -21,7 +21,7 @@ const initialState: OrderState = {
   },
   userOrders: [],
   error: null,
-  newOrder: null,
+  // newOrder: null,
   orderRequest: false,
   orderModalData: null
 };

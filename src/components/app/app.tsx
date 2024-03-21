@@ -58,7 +58,7 @@ const App = () => {
         />
         <Route
           path='/reset-password'
-          element={<OnlyAuth component={<ResetPassword />} />}
+          element={<OnlyUnAuth component={<ResetPassword />} />}
         />
         <Route path='/profile' element={<OnlyAuth component={<Profile />} />} />
         <Route

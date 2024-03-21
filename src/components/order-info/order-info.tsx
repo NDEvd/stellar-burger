@@ -4,10 +4,15 @@ import { OrderInfoUI } from '../ui/order-info';
 import { TIngredient } from '@utils-types';
 import { useParams } from 'react-router-dom';
 import { useSelector } from '../../services/store';
+import { useLocation } from 'react-router-dom';
 
 export const OrderInfo: FC = () => {
   let { number } = useParams();
-  const orders = useSelector((state) => state.order.feed.orders);
+  let location = useLocation();
+  let isOrderPage = location.pathname.includes('orders');
+  const orders = isOrderPage
+    ? useSelector((state) => state.order.userOrders)
+    : useSelector((state) => state.order.feed.orders);
   const orderData = orders.find((item) => item.number === Number(number));
 
   const ingredients: TIngredient[] = useSelector(
