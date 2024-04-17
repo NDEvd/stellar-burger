@@ -1,10 +1,11 @@
 describe('тестирование приложения', () => {
+  const testUrl = 'http://localhost:4000';
   it('сервис должен быть доступен по адресу localhost:4000', () => {
-    cy.visit('http://localhost:4000');
+    cy.visit(testUrl);
   });
 
   beforeEach(() => {
-    cy.visit('http://localhost:4000');
+    cy.visit(testUrl);
     cy.setCookie('accessToken', 'mockAccessToken');
     localStorage.setItem('refreshToken', 'mockRefreshToken');
 
